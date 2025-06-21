@@ -1,0 +1,192 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  background-size: 400% 400%;
+  animation: gradient 20s ease infinite;
+  font-family: 'Orbitron', monospace;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#big-heart {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10rem;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.overlay, .illustration {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  z-index: 3;
+  color: white;
+}
+
+.overlay {
+  top: 30%;
+}
+
+/* ✅ MEJORA DE TE AMO */
+.center-message {
+  font-size: 4rem;
+  font-family: 'Pacifico', cursive;
+  color: #ff99cc;
+  text-shadow: 0 0 10px white, 0 0 30px #ff69b4;
+  animation: fadeZoom 3s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ✅ MEJORA DEL SUBTÍTULO */
+.header-text {
+  font-family: 'Pacifico', cursive;
+  font-size: 2rem;
+  color: #ffddee;
+  margin-top: 15px;
+  text-shadow: 0 0 5px white;
+  animation: fadeIn 3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.illustration {
+  bottom: 80px;
+  font-size: 3rem;
+  animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.play-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+  background: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 24px;
+  font-family: 'Pacifico', cursive;
+  font-size: 1rem;
+  box-shadow: 0 0 10px #ff69b4;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.play-button:hover {
+  background: #ff1493;
+}
+
+.star {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 25px white, 0 0 50px #ccc;
+  animation: fall 3s linear forwards;
+  opacity: 0.9;
+}
+
+@keyframes fall {
+  0% { transform: translate(0, 0) scale(1); opacity: 1; }
+  100% { transform: translate(600px, 600px) scale(0.4); opacity: 0; }
+}
+
+.heart {
+  position: fixed;
+  color: #ff66cc;
+  font-size: 32px;
+  text-shadow: 0 0 10px white, 0 0 20px #ff66cc;
+  animation-name: floatHeart;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  pointer-events: none;
+  z-index: 9;
+}
+
+@keyframes floatHeart {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-100vh) scale(1.4); opacity: 0; }
+}
+
+.click-message {
+  position: fixed;
+  font-family: 'Pacifico', cursive;
+  font-size: 1.8rem;
+  pointer-events: none;
+  animation: fade 2s ease-out forwards;
+  z-index: 9999;
+}
+
+@keyframes fade {
+  0% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-50px); }
+}
+
+.controls {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+  font-family: 'Orbitron', sans-serif;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.controls label {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.controls input[type="text"],
+.controls select {
+  padding: 4px;
+  border-radius: 4px;
+  border: none;
+  font-family: inherit;
+}

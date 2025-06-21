@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Oye - Corazón y Música</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💖</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<canvas id="canvas"></canvas>
+
+<div id="big-heart">💖</div>
+
+<audio id="player"></audio>
+<button class="play-button" onclick="startPlaylist()">▶ Dale play al amor 🎵</button>
+
+<div class="controls">
+  <label>🎨 Color:
+    <input type="color" id="colorPicker" value="#ff69b4">
+  </label>
+  <label>⏱️ Velocidad:
+    <input type="range" id="speedRange" min="10" max="200" value="50">
+  </label>
+  <label>🌍 Idioma:
+    <select id="languageSelector">
+      <option value="TE AMO">Español</option>
+      <option value="I LOVE YOU">Inglés</option>
+      <option value="JE T’AIME">Francés</option>
+      <option value="ICH LIEBE DICH">Alemán</option>
+      <option value="TI AMO">Italiano</option>
+      <option value="AISHITERU">Japonés</option>
+      <option value="WO AI NI">Chino</option>
+      <option value="MAHAL KITA">Filipino</option>
+      <option value="EU TE AMO">Portugués</option>
+      <option value="SAGAPÓ">Griego</option>
+    </select>
+  </label>
+</div>
+
+<div class="overlay">
+  <div class="center-message">TE AMO 💖</div>
+  <div class="header-text">Este amor es solo para ti...</div>
+</div>
+
+<div class="illustration">💕 👫 💕</div>
+
+<script src="script.js"></script>
+</body>
+</html>
